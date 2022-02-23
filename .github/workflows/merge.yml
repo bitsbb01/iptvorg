@@ -38,8 +38,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         name: Install dependencies
         run: npm ci --ignore-scripts --no-audit --no-progress
-      - name: Test
-        run: npm run test
   merge-me:
     name: Merge me!
     needs:
