@@ -20,3 +20,16 @@ jobs:
         uses: ridedott/merge-me-action@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          
+      - name: Push changes for old files
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.scrapper_token }}
+          branch: ${{ github.ref }}
+          
+      - name: Commit All Files
+        uses: zwaldowski/git-commit-action@v1
+        with:
+             commit_message: Updated by Bot - ${{ steps.date.outputs.date }}
+             working_directory: .
