@@ -2,7 +2,11 @@ name: Merge me!
 
 on:
   schedule:
-    - cron: '0 0/3 * * *'
+    - cron: "0 0/1 * * *"
+  push:
+    branches:
+    - master
+    - main
   check_suite:
     types:
       - completed
